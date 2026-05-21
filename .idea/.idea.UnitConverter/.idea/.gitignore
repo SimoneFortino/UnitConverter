@@ -2,8 +2,6 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/contentModel.xml
-/modules.xml
 /projectSettingsUpdater.xml
 /.idea.UnitConverter.iml
 # Ignored default folder with query files
@@ -11,5 +9,3 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
