@@ -15,6 +15,11 @@ namespace CurrencyConverter
         public Form1()
         {
             InitializeComponent();
+            
+            Prova prova = new Prova();
+
+            prova.Import();
+            
         }
     }
 }
