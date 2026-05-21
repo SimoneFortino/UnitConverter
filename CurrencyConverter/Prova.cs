@@ -7,7 +7,8 @@ namespace CurrencyConverter
     public class Prova
     {
         public API_Obj result;
-        private string _apiKey = "afaad";
+        private string _apiKey = Environment.GetEnvironmentVariable("API_KEY");
+        
         public  bool Import()
             {
             try
@@ -26,7 +27,7 @@ namespace CurrencyConverter
                 }
             }
         }
-
+  
     public class API_Obj
         {
         public string result { get; set; }
