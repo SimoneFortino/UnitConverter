@@ -1,7 +1,14 @@
-﻿namespace UnitConverter.Categories.PhysicalQuantities
+﻿using UnitConverter.Utils;
+
+namespace UnitConverter.Categories.PhysicalQuantities
 {
-    public class Volume
+    public class Volume : PhysicalQuantity
     {
-        
+        public Volume(double value, Unit unit, Multiplier multiplier) :  base(value, unit, multiplier) { }
+
+        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
+        {
+            
+        }
     }
 }
