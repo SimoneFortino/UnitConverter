@@ -50,8 +50,6 @@
         <Compile Include="Categories\PhysicalQuantities\Lenght.cs" />
         <Compile Include="Categories\PhysicalQuantities\Temperature.cs" />
         <Compile Include="Categories\PhysicalQuantity.cs" />
-        <Compile Include="Categories\Multiplier.cs" />
-        <Compile Include="Categories\Unit.cs" />
         <Compile Include="Core\Converter.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
@@ -62,7 +60,10 @@
           <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
         <Compile Include="Utils\MeasurementUnitsDictionary.cs" />
+        <Compile Include="Utils\Multiplier.cs" />
+        <Compile Include="Utils\ObjectToConvert.cs" />
         <Compile Include="Utils\PhysicalQuantitiesDictionary.cs" />
+        <Compile Include="Utils\Unit.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>

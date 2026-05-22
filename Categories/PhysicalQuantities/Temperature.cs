@@ -1,4 +1,6 @@
-﻿namespace UnitConverter.Categories.PhysicalQuantities
+﻿using UnitConverter.Utils;
+
+namespace UnitConverter.Categories.PhysicalQuantities
 {
     public class Temperature : PhysicalQuantity
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UnitConverter.Categories
+﻿namespace UnitConverter.Utils
 {
     public enum Multiplier
     {
