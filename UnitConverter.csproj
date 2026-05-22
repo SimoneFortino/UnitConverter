@@ -47,8 +47,28 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Categories\MultiplierConverter.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Angle.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Area.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Capacitance.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Conductance.cs" />
+        <Compile Include="Categories\PhysicalQuantities\ElectricCharge.cs" />
+        <Compile Include="Categories\PhysicalQuantities\ElectricCurrent.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Energy.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Force.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Frequency.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Humidity.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Inductance.cs" />
         <Compile Include="Categories\PhysicalQuantities\Lenght.cs" />
+        <Compile Include="Categories\PhysicalQuantities\MagneticField.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Mass.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Memory.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Power.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Pressure.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Resistance.cs" />
         <Compile Include="Categories\PhysicalQuantities\Temperature.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Time.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Voltage.cs" />
+        <Compile Include="Categories\PhysicalQuantities\Volume.cs" />
         <Compile Include="Categories\PhysicalQuantity.cs" />
         <Compile Include="Core\Converter.cs" />
         <Compile Include="Program.cs"/>

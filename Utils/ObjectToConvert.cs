@@ -21,7 +21,7 @@
         Energy,
         Force,
         Time,
-        Angles,
+        Angle,
         MagneticField,
         Memory
         
