@@ -87,6 +87,7 @@ namespace UnitConverter
             this.physicalQuantityComboBox.Name = "physicalQuantityComboBox";
             this.physicalQuantityComboBox.Size = new System.Drawing.Size(155, 24);
             this.physicalQuantityComboBox.TabIndex = 5;
+            this.physicalQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.physicalQuantityComboBox_SelectedIndexChanged);
             // 
             // MainForm
             // 

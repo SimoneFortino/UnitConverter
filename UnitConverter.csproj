@@ -82,7 +82,6 @@
         <Compile Include="Utils\MeasurementUnitsDictionary.cs" />
         <Compile Include="Utils\Multiplier.cs" />
         <Compile Include="Utils\ObjectToConvert.cs" />
-        <Compile Include="Utils\PhysicalQuantitiesDictionary.cs" />
         <Compile Include="Utils\Unit.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
