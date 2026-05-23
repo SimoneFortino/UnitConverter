@@ -8,7 +8,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
         }
         
-        public void ConvertTo(Unit targetUnit)
+        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
         {
             double k;
 
@@ -16,7 +16,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             if (Unit == Unit.Celsius)
                 k = Value + 273.15;
             else if (Unit == Unit.Fahrenheit)
-                k = (Value - 32) * 9 / 5 + 273.15;
+                k = (Value - 32) * 5.0 / 9.0 + 273.15;
             else
                 k = Value;
             
@@ -24,10 +24,9 @@ namespace UnitConverter.Categories.PhysicalQuantities
             if (targetUnit == Unit.Celsius)
                 Value = k - 273.15;
             else if (targetUnit == Unit.Fahrenheit)
-                Value = (k - 273.15) + 9 / 5 + 32;
-            Value = k;
+                Value = (k - 273.15) + 9.0 / 5.0 + 32;
+            else
+                Value = k;
         }
-
-        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier) {}
     }
 }
