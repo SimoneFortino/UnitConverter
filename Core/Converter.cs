@@ -9,7 +9,7 @@ namespace UnitConverter.Core
 {
     public class Converter
     {
-        public object obj;
+        public object Obj;
         
         private static readonly Dictionary<ObjectToConvert, Func<double, Unit, Multiplier, object>> Factory = 
             new Dictionary<ObjectToConvert, Func<double, Unit, Multiplier, object>> 
@@ -40,7 +40,7 @@ namespace UnitConverter.Core
         
         public void InitializeObject(ObjectToConvert objectToConvert, double val, Unit unit, Multiplier multiplier)
         {
-            obj = Factory[objectToConvert](val, unit, multiplier);
+            Obj = Factory[objectToConvert](val, unit, multiplier);
         }
         
     }

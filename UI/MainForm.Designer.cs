@@ -46,6 +46,7 @@ namespace UnitConverter
             this.startingValueTextBox.Name = "startingValueTextBox";
             this.startingValueTextBox.Size = new System.Drawing.Size(100, 22);
             this.startingValueTextBox.TabIndex = 0;
+            this.startingValueTextBox.Text = "0";
             // 
             // convertedValueTextBox
             // 
@@ -53,6 +54,7 @@ namespace UnitConverter
             this.convertedValueTextBox.Name = "convertedValueTextBox";
             this.convertedValueTextBox.Size = new System.Drawing.Size(100, 22);
             this.convertedValueTextBox.TabIndex = 1;
+            this.convertedValueTextBox.Text = "0";
             // 
             // convertButton
             // 
@@ -62,7 +64,7 @@ namespace UnitConverter
             this.convertButton.TabIndex = 2;
             this.convertButton.Text = "Convert";
             this.convertButton.UseVisualStyleBackColor = true;
-            this.convertButton.Click += new System.EventHandler(this.button1_Click);
+            this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
             // 
             // startingUnitComboBox
             // 
@@ -102,6 +104,7 @@ namespace UnitConverter
             this.Controls.Add(this.startingValueTextBox);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

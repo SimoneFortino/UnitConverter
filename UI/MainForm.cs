@@ -13,12 +13,12 @@ namespace UnitConverter
         private Converter _converter;
         
         // Fonti di dati per comboBox
-        BindingSource startingUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
-        BindingSource convertedUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
+        readonly BindingSource startingUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
+        readonly BindingSource convertedUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
 
         BindingSource PhysicalquantitiesDataSource = new BindingSource();
         
-        // Variabili globali
+        // Variabili private
         private double StartingValue;
         private Unit  StartingUnit;
         private Multiplier StartingMultiplier;
@@ -32,7 +32,11 @@ namespace UnitConverter
         public MainForm()
         {
             InitializeComponent();
-            
+        }
+        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+                        
             _converter = new Converter();
 
             // Assegnazione fonti di dati
@@ -43,19 +47,23 @@ namespace UnitConverter
             convertedUnitComboBox.DataSource = convertedUnitsDataSource;
             convertedUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
             convertedUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
-
+            
             PhysicalquantitiesDataSource.DataSource = Enum.GetValues(typeof(ObjectToConvert));
             physicalQuantityComboBox.DataSource = PhysicalquantitiesDataSource;
+            
+            RefreshAll();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void convertButton_Click(object sender, EventArgs e)
         {
-            
-            
             TargetUnit = (Unit)convertedUnitComboBox.SelectedValue;
             TargetMultiplier = Multiplier.None;
             
-            dynamic dyn = _converter.obj;
+            dynamic dyn = _converter.Obj;
+            dyn.Value = StartingValue;
+            dyn.Unit = StartingUnit;
+            
+            // conversione del dato in unità di misura voluta
             dyn.ConvertTo(TargetUnit, TargetMultiplier);
 
             ConvertedValue = dyn.Value;
@@ -65,6 +73,11 @@ namespace UnitConverter
 
         // Evento di selezione di un nuovo elemento dal comboBox per il tipo di conversione
         private void physicalQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAll();
+        }
+
+        public void RefreshAll()
         {
             try
             {
@@ -80,10 +93,12 @@ namespace UnitConverter
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message);
             }
             
             Refresh();
         }
+
+
     }
 }
