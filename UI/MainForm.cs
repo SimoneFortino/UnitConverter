@@ -9,6 +9,8 @@ namespace UnitConverter
 {
     public partial class MainForm : Form
     {
+        private MainProcess _process;
+        
         // creazione oggetto converter
         private Converter _converter;
         
@@ -32,6 +34,8 @@ namespace UnitConverter
         public MainForm()
         {
             InitializeComponent();
+
+            _process = new MainProcess(this);
         }
         
         private void MainForm_Load(object sender, EventArgs e)
@@ -52,10 +56,13 @@ namespace UnitConverter
             physicalQuantityComboBox.DataSource = PhysicalquantitiesDataSource;
             
             RefreshAll();
+            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
         }
 
         private void convertButton_Click(object sender, EventArgs e)
         {
+            RefreshAll();
+
             TargetUnit = (Unit)convertedUnitComboBox.SelectedValue;
             TargetMultiplier = Multiplier.None;
             
@@ -75,6 +82,7 @@ namespace UnitConverter
         private void physicalQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshAll();
+            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
         }
 
         public void RefreshAll()
@@ -85,11 +93,6 @@ namespace UnitConverter
                 StartingValue = Convert.ToDouble(startingValueTextBox.Text);
                 StartingUnit = (Unit)startingUnitComboBox.SelectedValue;
                 StartingMultiplier = Multiplier.None;
-                
-                //MessageBox.Show(startingUnitComboBox.SelectedValue?.ToString() ?? "NULL");
-
-                
-                _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
             }
             catch (Exception exception)
             {
