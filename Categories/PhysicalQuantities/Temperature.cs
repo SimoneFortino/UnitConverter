@@ -1,4 +1,5 @@
-﻿using UnitConverter.Utils;
+﻿using System.Collections.Generic;
+using UnitConverter.Utils;
 
 namespace UnitConverter.Categories.PhysicalQuantities
 {
@@ -28,5 +29,12 @@ namespace UnitConverter.Categories.PhysicalQuantities
             else
                 Value = k;
         }
+
+        internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
+        {
+            { "°C", Unit.Celsius },
+            { "K", Unit.Kelvin },
+            { "°F", Unit.Fahrenheit },
+        };
     }
 }

@@ -15,8 +15,8 @@ namespace UnitConverter
         private Converter _converter;
         
         // Fonti di dati per comboBox
-        readonly BindingSource startingUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
-        readonly BindingSource convertedUnitsDataSource = new BindingSource(MeasurementUnitsDictionary.MeasurementUnits, null);
+        BindingSource _startingUnitsDataSource;
+        BindingSource _convertedUnitsDataSource;
 
         BindingSource PhysicalquantitiesDataSource = new BindingSource();
         
@@ -42,13 +42,14 @@ namespace UnitConverter
         {
                         
             _converter = new Converter();
-
+            InitializeConverter();
+            
             // Assegnazione fonti di dati
-            startingUnitComboBox.DataSource = startingUnitsDataSource;
+            startingUnitComboBox.DataSource = _startingUnitsDataSource;
             startingUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
             startingUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
             
-            convertedUnitComboBox.DataSource = convertedUnitsDataSource;
+            convertedUnitComboBox.DataSource = _convertedUnitsDataSource;
             convertedUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
             convertedUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
             
@@ -56,7 +57,7 @@ namespace UnitConverter
             physicalQuantityComboBox.DataSource = PhysicalquantitiesDataSource;
             
             RefreshAll();
-            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
+            
         }
 
         private void convertButton_Click(object sender, EventArgs e)
@@ -82,7 +83,10 @@ namespace UnitConverter
         private void physicalQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshAll();
-            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
+            InitializeConverter();
+            
+            startingUnitComboBox.DataSource = _startingUnitsDataSource;
+            convertedUnitComboBox.DataSource = _convertedUnitsDataSource;
         }
 
         public void RefreshAll()
@@ -100,6 +104,15 @@ namespace UnitConverter
             }
             
             Refresh();
+        }
+
+        public void InitializeConverter()
+        {
+            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
+            dynamic dyn = _converter.Obj;
+            
+            _startingUnitsDataSource = new BindingSource(dyn.UnitsDictionary, null);
+            _convertedUnitsDataSource = new BindingSource(dyn.UnitsDictionary, null);
         }
 
 

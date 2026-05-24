@@ -18,12 +18,12 @@ namespace UnitConverter.Categories
 
         protected void ConvertByMultiplier(Multiplier targetMultiplier)
         {
-            double baseValue = Value * Factor[UnitMultiplier];
-            Value = baseValue / Factor[targetMultiplier];
+            double baseValue = Value * FactorDictionary[UnitMultiplier];
+            Value = baseValue / FactorDictionary[targetMultiplier];
             UnitMultiplier = targetMultiplier;
         }
         
-        protected static readonly Dictionary<Multiplier, double> Factor = new Dictionary<Multiplier, double>
+        protected static readonly Dictionary<Multiplier, double> FactorDictionary = new Dictionary<Multiplier, double>
         {
             { Multiplier.Femto, 1e-15 },
             { Multiplier.Pico, 1e-12 },
@@ -41,6 +41,7 @@ namespace UnitConverter.Categories
             { Multiplier.Tera, 1e12 },
             { Multiplier.Peta, 1e15 }
         };
+        
          
         public abstract void ConvertTo(Unit targetUnit, Multiplier targetMultiplier);
     }

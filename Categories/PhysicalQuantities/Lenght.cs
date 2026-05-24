@@ -20,5 +20,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
             { Unit.Mile, 1609.34 },
             
         };
+
+        internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
+        {
+            { "m", Unit.Meter },
+            { "mi", Unit.Mile },
+            { "in", Unit.Inch },
+            { "ft", Unit.Foot },
+            { "y", Unit.Yard },
+        };
     }
 }
