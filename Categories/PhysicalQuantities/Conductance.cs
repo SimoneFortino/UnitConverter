@@ -14,7 +14,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
-            { "S", Unit.Siemens},
+            { "S", Unit.Siemens },
      
         };
     }

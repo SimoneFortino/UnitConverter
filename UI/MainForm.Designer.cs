@@ -38,6 +38,8 @@ namespace UnitConverter
             this.startingUnitComboBox = new System.Windows.Forms.ComboBox();
             this.convertedUnitComboBox = new System.Windows.Forms.ComboBox();
             this.physicalQuantityComboBox = new System.Windows.Forms.ComboBox();
+            this.startingMultiplierComboBox = new System.Windows.Forms.ComboBox();
+            this.convertedMultiplierComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // startingValueTextBox
@@ -69,7 +71,7 @@ namespace UnitConverter
             // startingUnitComboBox
             // 
             this.startingUnitComboBox.FormattingEnabled = true;
-            this.startingUnitComboBox.Location = new System.Drawing.Point(118, 125);
+            this.startingUnitComboBox.Location = new System.Drawing.Point(168, 125);
             this.startingUnitComboBox.Name = "startingUnitComboBox";
             this.startingUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.startingUnitComboBox.TabIndex = 3;
@@ -77,7 +79,7 @@ namespace UnitConverter
             // convertedUnitComboBox
             // 
             this.convertedUnitComboBox.FormattingEnabled = true;
-            this.convertedUnitComboBox.Location = new System.Drawing.Point(118, 192);
+            this.convertedUnitComboBox.Location = new System.Drawing.Point(168, 192);
             this.convertedUnitComboBox.Name = "convertedUnitComboBox";
             this.convertedUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.convertedUnitComboBox.TabIndex = 4;
@@ -91,11 +93,29 @@ namespace UnitConverter
             this.physicalQuantityComboBox.TabIndex = 5;
             this.physicalQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.physicalQuantityComboBox_SelectedIndexChanged);
             // 
+            // startingMultiplierComboBox
+            // 
+            this.startingMultiplierComboBox.FormattingEnabled = true;
+            this.startingMultiplierComboBox.Location = new System.Drawing.Point(118, 125);
+            this.startingMultiplierComboBox.Name = "startingMultiplierComboBox";
+            this.startingMultiplierComboBox.Size = new System.Drawing.Size(49, 24);
+            this.startingMultiplierComboBox.TabIndex = 6;
+            // 
+            // convertedMultiplierComboBox
+            // 
+            this.convertedMultiplierComboBox.FormattingEnabled = true;
+            this.convertedMultiplierComboBox.Location = new System.Drawing.Point(118, 192);
+            this.convertedMultiplierComboBox.Name = "convertedMultiplierComboBox";
+            this.convertedMultiplierComboBox.Size = new System.Drawing.Size(49, 24);
+            this.convertedMultiplierComboBox.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 330);
+            this.Controls.Add(this.convertedMultiplierComboBox);
+            this.Controls.Add(this.startingMultiplierComboBox);
             this.Controls.Add(this.physicalQuantityComboBox);
             this.Controls.Add(this.convertedUnitComboBox);
             this.Controls.Add(this.startingUnitComboBox);
@@ -108,6 +128,9 @@ namespace UnitConverter
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ComboBox startingMultiplierComboBox;
+        private System.Windows.Forms.ComboBox convertedMultiplierComboBox;
 
         private System.Windows.Forms.ComboBox startingUnitComboBox;
 

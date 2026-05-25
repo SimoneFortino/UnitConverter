@@ -17,6 +17,8 @@ namespace UnitConverter
         // Fonti di dati per comboBox
         BindingSource _startingUnitsDataSource;
         BindingSource _convertedUnitsDataSource;
+        BindingSource _startingMultiplierSource;
+        BindingSource _convertedMultiplierSource;
 
         BindingSource PhysicalquantitiesDataSource = new BindingSource();
         
