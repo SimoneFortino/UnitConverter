@@ -11,10 +11,17 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             
         }
+        
+        private static Dictionary<Unit, double> RadRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Radian, 1 },
+            { Unit.Degree, 0.017453292519943295 }
+        };
 
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
-            { "°", Unit.Degree },
+            { "deg", Unit.Degree },
             { "rad", Unit.Radian }
         };
     }

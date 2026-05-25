@@ -11,6 +11,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             
         }
+        
+        private static Dictionary<Unit, double> MeterRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.SquareMeter, 1 },
+            { Unit.Hectare, 10000 },
+            { Unit.Acre, 4046.8564224 }
+        };
 
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {

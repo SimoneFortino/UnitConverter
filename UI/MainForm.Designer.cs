@@ -58,7 +58,7 @@ namespace UnitConverter
             // 
             // convertButton
             // 
-            this.convertButton.Location = new System.Drawing.Point(199, 191);
+            this.convertButton.Location = new System.Drawing.Point(12, 241);
             this.convertButton.Name = "convertButton";
             this.convertButton.Size = new System.Drawing.Size(75, 23);
             this.convertButton.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace UnitConverter
             this.startingUnitComboBox.FormattingEnabled = true;
             this.startingUnitComboBox.Location = new System.Drawing.Point(118, 125);
             this.startingUnitComboBox.Name = "startingUnitComboBox";
-            this.startingUnitComboBox.Size = new System.Drawing.Size(49, 24);
+            this.startingUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.startingUnitComboBox.TabIndex = 3;
             // 
             // convertedUnitComboBox
@@ -79,7 +79,7 @@ namespace UnitConverter
             this.convertedUnitComboBox.FormattingEnabled = true;
             this.convertedUnitComboBox.Location = new System.Drawing.Point(118, 192);
             this.convertedUnitComboBox.Name = "convertedUnitComboBox";
-            this.convertedUnitComboBox.Size = new System.Drawing.Size(49, 24);
+            this.convertedUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.convertedUnitComboBox.TabIndex = 4;
             // 
             // physicalQuantityComboBox
