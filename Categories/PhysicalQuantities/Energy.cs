@@ -9,9 +9,11 @@ namespace UnitConverter.Categories.PhysicalQuantities
 
         public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
         {
-            
+            double baseValue = Value * Ref[Unit];
+            Value = baseValue / Ref[targetUnit];
+            Unit = targetUnit;
         }
-        private static Dictionary<Unit, double> JouleRef = new Dictionary<Unit, double>
+        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.Joule, 1 },
