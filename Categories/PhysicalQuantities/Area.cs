@@ -12,7 +12,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
-        private static Dictionary<Unit, double> MeterRef = new Dictionary<Unit, double>
+        private static Dictionary<Unit, double> SquareMeterRef = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.SquareMeter, 1 },

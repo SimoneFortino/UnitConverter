@@ -12,6 +12,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> WattRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Watt, 1 },
+            
+            { Unit.HorsePower, 735.49875 }
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "W", Unit.Watt },

@@ -12,6 +12,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> NewtonRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Newton, 1 },
+            
+            { Unit.Dyne, 1e-5 }
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "N", Unit.Newton},

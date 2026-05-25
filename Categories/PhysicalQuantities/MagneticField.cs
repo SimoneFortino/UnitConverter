@@ -12,6 +12,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> TeslaRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Tesla, 1 },
+            
+            { Unit.Gauss, 1e-4 }
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "T", Unit.Tesla },

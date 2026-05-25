@@ -12,6 +12,16 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> LiterRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Liter, 1 },
+            
+            { Unit.CubicMeter, 1000 },
+            { Unit.Gallon, 3.785411784 },
+            { Unit.Pint, 0.473176473 },
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "l", Unit.Liter  },

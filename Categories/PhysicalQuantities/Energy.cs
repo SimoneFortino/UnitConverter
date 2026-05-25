@@ -11,6 +11,15 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             
         }
+        private static Dictionary<Unit, double> JouleRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Joule, 1 },
+            
+            { Unit.WattHour, 3600.0 },
+            { Unit.Calorie, 4.184 },
+        };
+        
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {

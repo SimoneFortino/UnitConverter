@@ -12,12 +12,22 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> GramRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Gram, 1 },
+            
+            { Unit.Pound, 453.59237 },
+            { Unit.Ounce, 28.349523125 },
+            { Unit.AtomicMass, 1.66053906660e-24 }
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "g", Unit.Gram },
             { "lb", Unit.Pound },
             { "oz", Unit.Ounce },
-            { "amu", Utils.Unit.AtomicMass }
+            { "amu", Unit.AtomicMass }
         };
     }
 }

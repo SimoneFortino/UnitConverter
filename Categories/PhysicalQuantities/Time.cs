@@ -12,6 +12,18 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> TimeRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Second, 1 },
+            
+            { Unit.Minute, 60 },
+            { Unit.Hour, 3600 },
+            { Unit.Day, 86400 },
+            { Unit.Month, 2629746 },
+            {  Unit.Year, 31556952}
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "sec", Unit.Second  },

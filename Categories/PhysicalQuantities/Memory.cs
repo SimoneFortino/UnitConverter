@@ -12,6 +12,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
             
         }
         
+        private static Dictionary<Unit, double> ByteRef = new Dictionary<Unit, double>
+        {
+            // unità riferimento
+            { Unit.Byte, 1 },
+            
+            { Unit.Bit, 0.125 }
+        };
+        
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "B", Unit.Byte },
