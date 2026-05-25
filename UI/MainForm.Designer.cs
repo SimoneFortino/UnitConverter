@@ -42,23 +42,24 @@ namespace UnitConverter
             // 
             // startingValueTextBox
             // 
-            this.startingValueTextBox.Location = new System.Drawing.Point(12, 127);
+            this.startingValueTextBox.Location = new System.Drawing.Point(12, 84);
             this.startingValueTextBox.Name = "startingValueTextBox";
-            this.startingValueTextBox.Size = new System.Drawing.Size(100, 22);
+            this.startingValueTextBox.Size = new System.Drawing.Size(172, 22);
             this.startingValueTextBox.TabIndex = 0;
             this.startingValueTextBox.Text = "0";
             // 
             // convertedValueTextBox
             // 
-            this.convertedValueTextBox.Location = new System.Drawing.Point(12, 192);
+            this.convertedValueTextBox.Location = new System.Drawing.Point(12, 149);
             this.convertedValueTextBox.Name = "convertedValueTextBox";
-            this.convertedValueTextBox.Size = new System.Drawing.Size(100, 22);
+            this.convertedValueTextBox.ReadOnly = true;
+            this.convertedValueTextBox.Size = new System.Drawing.Size(172, 22);
             this.convertedValueTextBox.TabIndex = 1;
             this.convertedValueTextBox.Text = "0";
             // 
             // convertButton
             // 
-            this.convertButton.Location = new System.Drawing.Point(12, 241);
+            this.convertButton.Location = new System.Drawing.Point(91, 197);
             this.convertButton.Name = "convertButton";
             this.convertButton.Size = new System.Drawing.Size(75, 23);
             this.convertButton.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace UnitConverter
             // startingUnitComboBox
             // 
             this.startingUnitComboBox.FormattingEnabled = true;
-            this.startingUnitComboBox.Location = new System.Drawing.Point(118, 127);
+            this.startingUnitComboBox.Location = new System.Drawing.Point(193, 84);
             this.startingUnitComboBox.Name = "startingUnitComboBox";
             this.startingUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.startingUnitComboBox.TabIndex = 3;
@@ -77,7 +78,7 @@ namespace UnitConverter
             // convertedUnitComboBox
             // 
             this.convertedUnitComboBox.FormattingEnabled = true;
-            this.convertedUnitComboBox.Location = new System.Drawing.Point(118, 192);
+            this.convertedUnitComboBox.Location = new System.Drawing.Point(193, 149);
             this.convertedUnitComboBox.Name = "convertedUnitComboBox";
             this.convertedUnitComboBox.Size = new System.Drawing.Size(66, 24);
             this.convertedUnitComboBox.TabIndex = 4;
@@ -85,9 +86,9 @@ namespace UnitConverter
             // physicalQuantityComboBox
             // 
             this.physicalQuantityComboBox.FormattingEnabled = true;
-            this.physicalQuantityComboBox.Location = new System.Drawing.Point(12, 55);
+            this.physicalQuantityComboBox.Location = new System.Drawing.Point(12, 12);
             this.physicalQuantityComboBox.Name = "physicalQuantityComboBox";
-            this.physicalQuantityComboBox.Size = new System.Drawing.Size(155, 24);
+            this.physicalQuantityComboBox.Size = new System.Drawing.Size(247, 24);
             this.physicalQuantityComboBox.TabIndex = 5;
             this.physicalQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.physicalQuantityComboBox_SelectedIndexChanged);
             // 
@@ -95,7 +96,7 @@ namespace UnitConverter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 330);
+            this.ClientSize = new System.Drawing.Size(271, 234);
             this.Controls.Add(this.physicalQuantityComboBox);
             this.Controls.Add(this.convertedUnitComboBox);
             this.Controls.Add(this.startingUnitComboBox);
@@ -103,7 +104,7 @@ namespace UnitConverter
             this.Controls.Add(this.convertedValueTextBox);
             this.Controls.Add(this.startingValueTextBox);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Unit Converter";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
