@@ -14,10 +14,23 @@ namespace UnitConverter.Categories.PhysicalQuantities
             ConvertByMultiplier(targetMultiplier);
         }
 
-        private static Dictionary<Unit, double> ToMeter = new Dictionary<Unit, double>
+        private static Dictionary<Unit, double> MeterRef = new Dictionary<Unit, double>
         {
+            // unità riferimento
             { Unit.Meter, 1 },
+            
+            // unità imperiali
             { Unit.Mile, 1609.34 },
+            { Unit.Yard, 0.9144},
+            { Unit.Foot, 0.3048 },
+            { Unit.Inch, 0.0254 },
+            
+            // unità nautiche
+            { Unit.NauticalMile , 1852 },
+            
+            // unità astronomiche
+            { Unit.AstronomicalUnit, 149597870700 },
+            { Unit.LightYear, 3.08567e15 },
             
         };
 
@@ -27,7 +40,10 @@ namespace UnitConverter.Categories.PhysicalQuantities
             { "mi", Unit.Mile },
             { "in", Unit.Inch },
             { "ft", Unit.Foot },
-            { "y", Unit.Yard },
+            { "yrd", Unit.Yard },
+            { "NM", Unit.NauticalMile},
+            { "AU", Unit.AstronomicalUnit},
+            { "ly", Unit.LightYear}
         };
     }
 }

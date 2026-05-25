@@ -87,10 +87,15 @@ namespace UnitConverter
             
             startingUnitComboBox.DataSource = _startingUnitsDataSource;
             convertedUnitComboBox.DataSource = _convertedUnitsDataSource;
+            
+            startingValueTextBox.Text = "0";
+            convertedValueTextBox.Text = "0";
         }
 
         public void RefreshAll()
         {
+
+            
             try
             {
                 Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;
