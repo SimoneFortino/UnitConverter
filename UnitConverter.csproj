@@ -55,7 +55,6 @@
         <Compile Include="Categories\PhysicalQuantities\Energy.cs" />
         <Compile Include="Categories\PhysicalQuantities\Force.cs" />
         <Compile Include="Categories\PhysicalQuantities\Frequency.cs" />
-        <Compile Include="Categories\PhysicalQuantities\Humidity.cs" />
         <Compile Include="Categories\PhysicalQuantities\Inductance.cs" />
         <Compile Include="Categories\PhysicalQuantities\Lenght.cs" />
         <Compile Include="Categories\PhysicalQuantities\MagneticField.cs" />

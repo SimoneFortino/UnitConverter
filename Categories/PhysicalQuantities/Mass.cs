@@ -1,4 +1,5 @@
-﻿using UnitConverter.Utils;
+﻿using System.Collections.Generic;
+using UnitConverter.Utils;
 
 namespace UnitConverter.Categories.PhysicalQuantities
 {
@@ -10,5 +11,13 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             
         }
+        
+        internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
+        {
+            { "g", Unit.Gram },
+            { "lb", Unit.Pound },
+            { "oz", Unit.Ounce },
+            { "amu", Utils.Unit.AtomicMass }
+        };
     }
 }

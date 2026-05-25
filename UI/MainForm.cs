@@ -94,8 +94,6 @@ namespace UnitConverter
 
         public void RefreshAll()
         {
-
-            
             try
             {
                 Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;

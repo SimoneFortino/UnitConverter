@@ -15,7 +15,6 @@ namespace UnitConverter.Core
             new Dictionary<ObjectToConvert, Func<double, Unit, Multiplier, object>> 
             { 
                 { ObjectToConvert.Temperature, (v, u, m) => new Temperature(v, u, m) },
-                { ObjectToConvert.Humidity, (v, u, m) => new Humidity(v, u, m) },
                 { ObjectToConvert.Pressure, (v, u, m) => new Pressure(v, u, m) },
                 { ObjectToConvert.Lenght, (v, u, m) => new Lenght(v, u, m) },
                 { ObjectToConvert.Area, (v, u, m) => new Area(v, u, m) },

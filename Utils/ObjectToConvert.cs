@@ -3,7 +3,6 @@
     public enum ObjectToConvert
     {
         Temperature,
-        Humidity,
         Pressure,
         Lenght,
         Area, 
