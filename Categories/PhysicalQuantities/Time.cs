@@ -18,6 +18,9 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Second, 1 },
+            { Unit.Millisecond, 1e-3 },
+            { Unit.Microsecond, 1e-6 },
+            { Unit.Nanosecond, 1e-9 },
             
             { Unit.Minute, 60 },
             { Unit.Hour, 3600 },

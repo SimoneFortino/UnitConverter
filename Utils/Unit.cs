@@ -9,13 +9,29 @@
         
         // Pressure
         Pascal,
+        Hectopascal,
+        Kilopascal,
+        Megapascal,
+        
         Bar,
+        Millibar,
+        
         Atmosphere,
         Psi,
+        
         MillimeterHg,
+        Torr,
         
         // Lenght
         Meter,
+        Kilometer,
+        Hectometer,
+        Decameter,
+        Decimeter,
+        Centimeter,
+        Millimeter,
+        Micrometer,
+        Nanometer,
         
         Inch,
         Foot,
@@ -29,59 +45,93 @@
         
         // Area
         SquareMeter,
+        SquareKilometer,
+        SquareDecimeter,
+        SquareCentimeter,
+        SquareMillimeter,
+        
         Hectare,
         Acre,
         
+        SquareMile,
+        SquareInch,
+        
         // Volume
         Liter,
+        Deciliter,
+        Centiliter,
+        Milliliter,
+        Decaliter,
+        Hectoliter,
+        
         CubicMeter,
-        Gallon,
-        Pint,
+        CubicDecimeter,
+        CubicCentimeter,
+        CubicMillimeter,
+        
+        UsGallon,
+        UsPint,
+        
+        OilBarrel,
         
         // Mass
         Gram,
+        Kilogram,
+        Milligram,
+        Microgram,
+        Nanogram,
+        Tonne,
         
         Pound,
         Ounce,
+        Stone,
+        UsTon,
+        UkTon,
         
         AtomicMass,
         
-        // Electric current
-        Ampere,
-        
-        // Resistance
-        Ohm,
-        
-        // Voltage
-        Volt,
-        
-        // Inductance
-        Henry,
-        
-        // Capacitance
-        Farad,
-        
-        // Conductance
-        Siemens,
-        
         // Electric charge
         Coulomb,
-        AmpereHour,
+        Millicoulomb,
+        Microcoulomb,
+        Nanocoulomb,
         
-        // Frequency
-        Hertz,
+        Faraday,
+        
+        AmpereHour,
+        MilliampereHour,
         
         // Power
         Watt,
+        Milliwatt,
+        Kilowatt,
+        Megawatt,
+        Gigawatt,
+        
+        MetricHorsePower,
         HorsePower,
         
         // Energy
         Joule,
+        Kilojoule,
+        Megajoule,
+        Gigajoule,
+        
         Calorie,
+        Kilocalorie,
+        
         WattHour,
+        KilowattHour,
+        MegawattHour,
+        GigawattHour,
         
         // Force
         Newton,
+        Kilonewton,
+        Meganewton,
+        Micronewton,
+        Millinewton,
+        
         Dyne,
         
         // Time
@@ -91,6 +141,9 @@
         Hour,
         Minute,
         Second,
+        Millisecond,
+        Microsecond,
+        Nanosecond,
         
         // Angles
         Degree,
@@ -98,11 +151,20 @@
         
         // Magnetic Field
         Tesla,
+        Millitesla,
+        Microtesla,
         Gauss,
         
         // Memory
         Bit,
-        Byte
+        Kilobit,
+        Megabit,
+        Gigabit,
         
+        Byte,
+        Kilobyte,
+        Megabyte,
+        Gigabyte,
+        Terabyte,
     }
 }

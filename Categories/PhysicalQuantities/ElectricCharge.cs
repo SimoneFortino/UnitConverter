@@ -18,13 +18,27 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Coulomb, 1 },
-            { Unit.AmpereHour, 3600.0 }
+            { Unit.Millicoulomb, 0.001 },
+            { Unit.Microcoulomb, 0.000001 },
+            { Unit.Nanocoulomb, 1e-9 },
+            
+            { Unit.AmpereHour, 3600.0 },
+            { Unit.MilliampereHour, 1 },
+            
+            { Unit.Faraday, 96485.33212 },
         };
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "C", Unit.Coulomb},
-            { "Ah", Unit.AmpereHour}
+            { "mC", Unit.Millicoulomb},
+            { "uC", Unit.Microcoulomb},
+            { "nC", Unit.Nanocoulomb},
+            
+            { "Ah", Unit.AmpereHour},
+            { "mAh", Unit.MilliampereHour},
+            
+            { "Fd", Unit.Faraday},
         };
     }
 }

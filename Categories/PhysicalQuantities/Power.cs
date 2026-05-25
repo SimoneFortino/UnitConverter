@@ -18,14 +18,25 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Watt, 1 },
+            { Unit.Milliwatt, 0.001 },
+            { Unit.Kilowatt, 1000 },
+            { Unit.Megawatt, 1e6 },
+            { Unit.Gigawatt, 1e9 },
             
-            { Unit.HorsePower, 735.49875 }
+            { Unit.MetricHorsePower, 735.49875 },
+            { Unit.HorsePower, 745.6998715822702 },
         };
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
+            { "GW", Unit.Gigawatt },
+            { "MW", Unit.Megawatt },
+            { "kW", Unit.Kilowatt },
             { "W", Unit.Watt },
-            { "HP", Unit.HorsePower }
+            { "mW", Unit.Milliwatt },
+            
+            { "CV", Unit.MetricHorsePower },
+            { "HP", Unit.HorsePower },
         };
     }
 }

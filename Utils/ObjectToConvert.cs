@@ -8,21 +8,14 @@
         Area, 
         Volume,
         Mass,
-        ElectricCurrent,
-        Resistance,
-        Voltage,
-        Inductance,
-        Capacitance,
-        Conductance,
         ElectricCharge,
-        Frequency,
         Power,
         Energy,
         Force,
         Time,
         Angle,
         MagneticField,
-        Memory
+        DataSize
         
     }
 }

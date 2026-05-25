@@ -22,6 +22,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Meter, 1 },
+            { Unit.Kilometer, 1000 },
+            { Unit.Hectometer, 100 },
+            { Unit.Decameter, 10 },
+            { Unit.Decimeter, 0.1 },
+            { Unit.Centimeter, 0.01 },
+            { Unit.Millimeter, 0.001 },
+            { Unit.Micrometer, 0.000001 },
+            { Unit.Nanometer, 1e-9 },
             
             // unità imperiali
             { Unit.Mile, 1609.34 },
@@ -40,12 +48,23 @@ namespace UnitConverter.Categories.PhysicalQuantities
 
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
+            { "Km", Unit.Kilometer },
+            { "hm", Unit.Hectometer },
+            { "dam", Unit.Decameter },
             { "m", Unit.Meter },
+            { "dm", Unit.Decimeter },
+            { "cm", Unit.Centimeter },
+            { "mm", Unit.Millimeter },
+            { "um", Unit.Micrometer },
+            { "nm", Unit.Nanometer },
+            
             { "mi", Unit.Mile },
-            { "in", Unit.Inch },
-            { "ft", Unit.Foot },
             { "yrd", Unit.Yard },
+            { "ft", Unit.Foot },
+            { "in", Unit.Inch },
+            
             { "NM", Unit.NauticalMile},
+            
             { "AU", Unit.AstronomicalUnit},
             { "ly", Unit.LightYear}
         };

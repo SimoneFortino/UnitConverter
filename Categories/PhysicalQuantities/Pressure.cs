@@ -18,20 +18,32 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Pascal, 1 },
+            { Unit.Hectopascal, 100 },
+            { Unit.Kilopascal, 1e3 },
+            { Unit.Megapascal, 1e6 },
             
             { Unit.Atmosphere, 101325 },
             { Unit.Bar, 100000 },
+            { Unit.Millibar, 100 },
+            
             { Unit.MillimeterHg, 133.322387415 },
+            { Unit.Torr, 133.322 },
             { Unit.Psi, 6894.757293168 }
         };
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
-            { "PSI", Unit.Psi },
-            { "BAR", Unit.Bar },
+            { "psi", Unit.Psi },
+            { "bar", Unit.Bar },
+            { "mbar", Unit.Millibar },
             { "atm", Unit.Atmosphere },
             { "mmHg", Unit.MillimeterHg},
-            { "Pa", Unit.Pascal }
+            { "Torr", Unit.Torr },
+            
+            { "Pa", Unit.Pascal },
+            { "hPa", Unit.Hectopascal },
+            { "kPa", Unit.Kilopascal },
+            { "MPa", Unit.Megapascal },
         };
     }
 }

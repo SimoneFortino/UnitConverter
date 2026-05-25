@@ -18,6 +18,8 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
             // unità riferimento
             { Unit.Tesla, 1 },
+            { Unit.Millitesla, 1e-3 },
+            { Unit.Microtesla, 1e-6 },
             
             { Unit.Gauss, 1e-4 }
         };
@@ -25,6 +27,8 @@ namespace UnitConverter.Categories.PhysicalQuantities
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
             { "T", Unit.Tesla },
+            { "mT", Unit.Millitesla },
+            { "uT", Unit.Microtesla },
             { "Gs", Unit.Gauss }
         };
     }
