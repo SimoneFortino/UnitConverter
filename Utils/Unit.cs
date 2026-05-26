@@ -166,5 +166,29 @@
         Megabyte,
         Gigabyte,
         Terabyte,
+        
+        // Dose di radiazione equivalente
+        Sievert,
+        Millisievert,
+        Microsievert,
+        
+        Roentgen,
+        Milliroentgen,
+        
+        // Velocità lineare
+        Kilometerspersecond,
+        Kilometersperhour,
+        Meterspersecond,
+        Inchespersecond,
+        Mach,
+        
+        // Accelerazione
+        Meterspersecond2,
+        Kilometerspersecond2,
+        G,
+        
+        // 
+        
+        
     }
 }
