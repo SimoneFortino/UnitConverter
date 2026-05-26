@@ -5,21 +5,11 @@ namespace UnitConverter.Categories.PhysicalQuantities
 {
     public class Lenght : PhysicalQuantity
     {
-        public Lenght(double value, Unit unit, Multiplier unitMultiplier) : base(value, unit, unitMultiplier)
+        public Lenght(double value, Unit unit) :  base(value, unit)
         {
         }
-
-        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
-        {
-            double baseValue = Value * Ref[Unit];
-            Value = baseValue / Ref[targetUnit];
-            Unit = targetUnit;
-            
-            ConvertByMultiplier(targetMultiplier);
-        }
-
-        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
-        {
+        
+        protected override Dictionary<Unit, double> Ref { get;  } = new Dictionary<Unit, double>        {
             // unità riferimento
             { Unit.Meter, 1 },
             { Unit.Kilometer, 1000 },

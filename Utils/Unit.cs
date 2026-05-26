@@ -6,6 +6,7 @@
         Celsius,
         Fahrenheit,
         Kelvin,
+        Rankine,
         
         // Pressure
         Pascal,

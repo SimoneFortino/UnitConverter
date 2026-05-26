@@ -7,42 +7,20 @@ namespace UnitConverter.Categories
     {
         public double Value { get; set; }
         public Unit Unit { get; set; }
-        public Multiplier UnitMultiplier { get; set; }
 
-        protected PhysicalQuantity(double value, Unit unit, Multiplier unitMultiplier)
+        protected PhysicalQuantity(double value, Unit unit)
         {
             Value = value;
             Unit = unit;
-            UnitMultiplier = unitMultiplier;
         }
+        
+        protected abstract Dictionary<Unit, double> Ref { get; }
 
-        protected void ConvertByMultiplier(Multiplier targetMultiplier)
+        public virtual void ConvertTo(Unit targetUnit)
         {
-            double baseValue = Value * FactorDictionary[UnitMultiplier];
-            Value = baseValue / FactorDictionary[targetMultiplier];
-            UnitMultiplier = targetMultiplier;
+            double baseValue = Value * Ref[Unit];
+            Value = baseValue / Ref[targetUnit];
+            Unit = targetUnit;
         }
-        
-        protected static readonly Dictionary<Multiplier, double> FactorDictionary = new Dictionary<Multiplier, double>
-        {
-            { Multiplier.Femto, 1e-15 },
-            { Multiplier.Pico, 1e-12 },
-            { Multiplier.Nano, 1e-9 },
-            { Multiplier.Micro, 1e-6 },
-            { Multiplier.Milli, 1e-3 },
-            { Multiplier.Centi, 1e-2 },
-            { Multiplier.Deci, 1e-1 },
-            { Multiplier.None, 1 },
-            { Multiplier.Deca, 1e1 },
-            { Multiplier.Hecto, 1e2 },
-            { Multiplier.Kilo, 1e3 },
-            { Multiplier.Mega, 1e6 },
-            { Multiplier.Giga, 1e9 },
-            { Multiplier.Tera, 1e12 },
-            { Multiplier.Peta, 1e15 }
-        };
-        
-         
-        public abstract void ConvertTo(Unit targetUnit, Multiplier targetMultiplier);
     }
 }

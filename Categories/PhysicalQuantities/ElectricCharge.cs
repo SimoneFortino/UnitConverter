@@ -5,9 +5,9 @@ namespace UnitConverter.Categories.PhysicalQuantities
 {
     public class ElectricCharge : PhysicalQuantity
     {
-        public ElectricCharge(double value, Unit unit, Multiplier multiplier) :  base(value, unit, multiplier) { }
+        public ElectricCharge(double value, Unit unit) :  base(value, unit) { }
 
-        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
+        public override void ConvertTo(Unit targetUnit)
         {
             double baseValue = Value * Ref[Unit];
             Value = baseValue / Ref[targetUnit];

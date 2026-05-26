@@ -5,16 +5,10 @@ namespace UnitConverter.Categories.PhysicalQuantities
 {
     public class Time : PhysicalQuantity
     {
-        public Time(double value, Unit unit, Multiplier multiplier) :  base(value, unit, multiplier) { }
-
-        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
-        {
-            double baseValue = Value * Ref[Unit];
-            Value = baseValue / Ref[targetUnit];
-            Unit = targetUnit;
-        }
+        public Time(double value, Unit unit) :  base(value, unit) { }
         
-        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
+        
+        protected override Dictionary<Unit, double> Ref { get;  } = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.Second, 1 },
@@ -31,6 +25,9 @@ namespace UnitConverter.Categories.PhysicalQuantities
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>
         {
+            { "ns", Unit.Nanosecond  },
+            { "us", Unit.Microsecond  },
+            { "ms", Unit.Millisecond  },
             { "sec", Unit.Second  },
             { "min", Unit.Minute },
             { "hr", Unit.Hour },
@@ -38,5 +35,6 @@ namespace UnitConverter.Categories.PhysicalQuantities
             { "mnt", Unit.Month },
             { "yr", Unit.Year }
         };
+        
     }
 }

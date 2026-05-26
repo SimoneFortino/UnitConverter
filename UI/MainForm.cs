@@ -23,11 +23,10 @@ namespace UnitConverter
         // Variabili private
         private double StartingValue;
         private Unit  StartingUnit;
-        private Multiplier StartingMultiplier;
+
         private ObjectToConvert Selection;
 
         private Unit TargetUnit;
-        private Multiplier TargetMultiplier;
         private double ConvertedValue;
         
         
@@ -65,14 +64,13 @@ namespace UnitConverter
             RefreshAll();
 
             TargetUnit = (Unit)convertedUnitComboBox.SelectedValue;
-            TargetMultiplier = Multiplier.None;
             
             dynamic dyn = _converter.Obj;
             dyn.Value = StartingValue;
             dyn.Unit = StartingUnit;
             
             // conversione del dato in unità di misura voluta
-            dyn.ConvertTo(TargetUnit, TargetMultiplier);
+            dyn.ConvertTo(TargetUnit);
 
             ConvertedValue = dyn.Value;
             convertedValueTextBox.Text = ConvertedValue.ToString();
@@ -92,14 +90,13 @@ namespace UnitConverter
             convertedValueTextBox.Text = "0";
         }
 
-        public void RefreshAll()
+        private void RefreshAll()
         {
             try
             {
                 Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;
                 StartingValue = Convert.ToDouble(startingValueTextBox.Text);
                 StartingUnit = (Unit)startingUnitComboBox.SelectedValue;
-                StartingMultiplier = Multiplier.None;
             }
             catch (Exception exception)
             {
@@ -111,7 +108,7 @@ namespace UnitConverter
 
         public void InitializeConverter()
         {
-            _converter.InitializeObject(Selection, StartingValue, StartingUnit, StartingMultiplier);
+            _converter.InitializeObject(Selection, StartingValue, StartingUnit);
             dynamic dyn = _converter.Obj;
             
             _startingUnitsDataSource = new BindingSource(dyn.UnitsDictionary, null);

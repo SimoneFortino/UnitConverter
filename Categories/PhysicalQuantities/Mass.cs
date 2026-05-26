@@ -5,17 +5,9 @@ namespace UnitConverter.Categories.PhysicalQuantities
 {
     public class Mass : PhysicalQuantity
     {
-        public Mass(double value, Unit unit, Multiplier multiplier) :  base(value, unit, multiplier) { }
-
-        public override void ConvertTo(Unit targetUnit, Multiplier targetMultiplier)
-        {
-            double baseValue = Value * Ref[Unit];
-            Value = baseValue / Ref[targetUnit];
-            Unit = targetUnit;
-        }
+        public Mass(double value, Unit unit) :  base(value, unit) { }
         
-        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
-        {
+        protected override Dictionary<Unit, double> Ref { get;  } = new Dictionary<Unit, double>        {
             // unità riferimento
             { Unit.Gram, 1 },
             { Unit.Kilogram, 1000 },
@@ -40,7 +32,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             { "g", Unit.Gram },
             { "mg", Unit.Milligram },
             { "ug", Unit.Microgram },
-            { "nm", Unit.Nanogram },
+            { "ng", Unit.Nanogram },
 
             
             { "USton", Unit.UsTon },
