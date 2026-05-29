@@ -9,7 +9,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
         {
         }
         
-        protected override Dictionary<Unit, double> Ref { get;  } = new Dictionary<Unit, double>        {
+        protected override Dictionary<Unit, double> Ref { get; } = new Dictionary<Unit, double>        {
             // unità riferimento
             { Unit.Meter, 1 },
             { Unit.Kilometer, 1000 },

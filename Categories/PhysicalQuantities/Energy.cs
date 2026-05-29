@@ -13,7 +13,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             Value = baseValue / Ref[targetUnit];
             Unit = targetUnit;
         }
-        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
+        protected override Dictionary<Unit, double> Ref { get; } = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.Joule, 1 },

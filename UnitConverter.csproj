@@ -62,7 +62,7 @@
         <Compile Include="Categories\PhysicalQuantities\Volume.cs" />
         <Compile Include="Categories\PhysicalQuantity.cs" />
         <Compile Include="Core\Converter.cs" />
-        <Compile Include="Core\MainProcess.cs" />
+        <Compile Include="Core\ConversionEngine.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="UI\MainForm.cs">

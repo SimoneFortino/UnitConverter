@@ -9,7 +9,7 @@ namespace UnitConverter
 {
     public partial class MainForm : Form
     {
-        private MainProcess _process;
+        private ConversionEngine _engine = new ConversionEngine();
         
         // creazione oggetto converter
         private Converter _converter;
@@ -17,8 +17,6 @@ namespace UnitConverter
         // Fonti di dati per comboBox
         BindingSource _startingUnitsDataSource;
         BindingSource _convertedUnitsDataSource;
-
-        BindingSource PhysicalquantitiesDataSource = new BindingSource();
         
         // Variabili private
         private double StartingValue;
@@ -33,35 +31,27 @@ namespace UnitConverter
         public MainForm()
         {
             InitializeComponent();
-
-            _process = new MainProcess(this);
         }
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-                        
-            _converter = new Converter();
-            InitializeConverter();
+            try
+            {
+                physicalQuantityComboBox.DataSource = Enum.GetValues(typeof(ObjectToConvert));
+             
+                ReadValues(1);
+                LoadSelection();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
             
-            // Assegnazione fonti di dati
-            startingUnitComboBox.DataSource = _startingUnitsDataSource;
-            startingUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
-            startingUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
-            
-            convertedUnitComboBox.DataSource = _convertedUnitsDataSource;
-            convertedUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
-            convertedUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
-            
-            PhysicalquantitiesDataSource.DataSource = Enum.GetValues(typeof(ObjectToConvert));
-            physicalQuantityComboBox.DataSource = PhysicalquantitiesDataSource;
-            
-            RefreshAll();
-            
+
         }
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            RefreshAll();
 
             TargetUnit = (Unit)convertedUnitComboBox.SelectedValue;
             
@@ -80,40 +70,56 @@ namespace UnitConverter
         // Evento di selezione di un nuovo elemento dal comboBox per il tipo di conversione
         private void physicalQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshAll();
-            InitializeConverter();
+            startingUnitComboBox.Text = "0";
+            convertedUnitComboBox.Text = "0";
             
-            startingUnitComboBox.DataSource = _startingUnitsDataSource;
-            convertedUnitComboBox.DataSource = _convertedUnitsDataSource;
-            
-            startingValueTextBox.Text = "0";
-            convertedValueTextBox.Text = "0";
+            ReadValues(0);
+            LoadSelection();
         }
 
-        private void RefreshAll()
+        private void LoadSelection()
         {
-            try
-            {
-                Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;
-                StartingValue = Convert.ToDouble(startingValueTextBox.Text);
-                StartingUnit = (Unit)startingUnitComboBox.SelectedValue;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
+            _engine.StartingValue = StartingValue;
+            _engine.StartingUnit = StartingUnit;
             
-            Refresh();
+            var selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;
+            _engine.SetObject(selection);
+
+            dynamic dyn = _engine.DynamicObject;
+            
+            startingUnitComboBox.DataSource = new BindingSource(dyn.UnitsDictionary, null);
+            startingUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
+            startingUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
+            
+            convertedUnitComboBox.DataSource = new BindingSource(dyn.UnitsDictionary, null);
+            convertedUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
+            convertedUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
         }
 
-        public void InitializeConverter()
+        public void ReadValues(int c)
         {
-            _converter.InitializeObject(Selection, StartingValue, StartingUnit);
-            dynamic dyn = _converter.Obj;
+            if (c == 1)
+            {
+                StartingValue = 0;
+                StartingUnit = Unit.Celsius;
+            }
+            else
+            {
+                try
+                {
+                    StartingValue = Convert.ToDouble(startingValueTextBox.Text);
+                    StartingUnit = (Unit)startingUnitComboBox.SelectedValue;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    Console.WriteLine(e);
+                }
+ 
+            }
             
-            _startingUnitsDataSource = new BindingSource(dyn.UnitsDictionary, null);
-            _convertedUnitsDataSource = new BindingSource(dyn.UnitsDictionary, null);
+
         }
-        
+
     }
 }

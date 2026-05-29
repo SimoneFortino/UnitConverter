@@ -6,7 +6,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
     public class Angle : PhysicalQuantity
     {
         public Angle(double value, Unit unit) :  base(value, unit) { }
-
+        
         public override void ConvertTo(Unit targetUnit)
         {
             double baseValue = Value * Ref[Unit];
@@ -14,7 +14,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             Unit = targetUnit;
         }
         
-        private static Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
+        protected override Dictionary<Unit, double> Ref { get; } = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.Radian, 1 },

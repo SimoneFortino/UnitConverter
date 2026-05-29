@@ -14,7 +14,7 @@ namespace UnitConverter.Categories.PhysicalQuantities
             Unit = targetUnit;
         }
         
-        private static readonly Dictionary<Unit, double> Ref = new Dictionary<Unit, double>
+        protected override Dictionary<Unit, double> Ref { get; } = new Dictionary<Unit, double>
         {
             // unità riferimento
             { Unit.Liter, 1 },
