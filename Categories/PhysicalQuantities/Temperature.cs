@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using UnitConverter.Utils;
 
 namespace UnitConverter.Categories.PhysicalQuantities
@@ -31,6 +32,14 @@ namespace UnitConverter.Categories.PhysicalQuantities
         public override void ConvertTo(Unit targetUnit)
         {
             double k = ToKelvin[Unit](Value);
+
+            if (k < 0)
+            {
+                MessageBox.Show("Valore non valido per la temperatura.");
+                Value = 0;
+                return;
+            }
+            
             Value = FromKelvin[targetUnit](k);
         }
         

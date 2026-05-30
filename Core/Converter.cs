@@ -28,6 +28,9 @@ namespace UnitConverter.Core
                 { ObjectToConvert.Angle, (v, u) => new Angle(v, u) },
                 { ObjectToConvert.MagneticField, (v, u) => new MagneticField(v, u) },
                 { ObjectToConvert.DataSize, (v, u) => new DataSize(v, u) },
+                { ObjectToConvert.RadiationDose, (v, u) => new RadiationDose(v, u) },
+                { ObjectToConvert.LinearVelocity, (v, u) => new LinearVelocity(v, u) },
+                { ObjectToConvert.LinearAcceleration, (v, u) => new LinearAcceleration(v, u) },
             };
         
         public void InitializeObject(ObjectToConvert objectToConvert, double val, Unit unit)
