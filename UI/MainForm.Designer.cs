@@ -1,7 +1,7 @@
 using System.Linq;
 using UnitConverter.Utils;
 
-namespace UnitConverter
+namespace UnitConverter.UI
 {
     partial class MainForm
     {

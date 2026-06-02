@@ -15,7 +15,9 @@
         Time,
         Angle,
         MagneticField,
-        DataSize
-        
+        DataSize,
+        RadiationDose,
+        LinearVelocity,
+        LinearAcceleration,
     }
 }

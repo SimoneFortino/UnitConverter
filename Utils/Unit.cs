@@ -173,8 +173,8 @@
         Millisievert,
         Microsievert,
         
-        Roentgen,
-        Milliroentgen,
+        Rem,
+        Millirem,
         
         // Velocità lineare
         Kilometerspersecond,
@@ -183,10 +183,14 @@
         Inchespersecond,
         Mach,
         
+        Milesperhour,
+        Knot,
+        
         // Accelerazione
         Meterspersecond2,
         Kilometerspersecond2,
-        G,
+        Gravity,
+        Inchespersecond2,
         
         // 
         
