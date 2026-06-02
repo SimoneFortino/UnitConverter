@@ -19,7 +19,17 @@ namespace CurrencyConverter
             Prova prova = new Prova();
 
             prova.Import();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var nomi = new List<string> { "Luca", "Marco", "Giulia" };
+            Currency_list.DataSource = nomi;
             
         }
+        public string GetSelectedCurrency()
+        {
+            return Currency_list?.Text ?? string.Empty;
+        }
     }
+
 }
