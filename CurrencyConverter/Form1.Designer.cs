@@ -29,27 +29,16 @@ namespace CurrencyConverter
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Currency_list = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // Currency_list
             // 
             this.Currency_list.FormattingEnabled = true;
-            this.Currency_list.Items.AddRange(new object[] { "test", "avvio" });
-            this.Currency_list.Location = new System.Drawing.Point(59, 30);
+            this.Currency_list.Location = new System.Drawing.Point(50, 59);
             this.Currency_list.Name = "Currency_list";
-            this.Currency_list.Size = new System.Drawing.Size(54, 21);
+            this.Currency_list.Size = new System.Drawing.Size(74, 21);
             this.Currency_list.TabIndex = 1;
-            this.Currency_list.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
             // 
             // Form1
             // 
@@ -57,17 +46,13 @@ namespace CurrencyConverter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Currency_list);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         private System.Windows.Forms.ComboBox Currency_list;
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
 
         #endregion
     }
