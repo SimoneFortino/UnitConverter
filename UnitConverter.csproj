@@ -74,6 +74,7 @@
           <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
         <Compile Include="Utils\ObjectToConvert.cs" />
+        <Compile Include="Utils\ObjToConvertDict.cs" />
         <Compile Include="Utils\Unit.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

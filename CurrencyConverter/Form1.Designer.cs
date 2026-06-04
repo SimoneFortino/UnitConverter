@@ -44,7 +44,7 @@ namespace CurrencyConverter
             // Currency_list
             // 
             this.Currency_list.FormattingEnabled = true;
-            this.Currency_list.Items.AddRange(new object[] { "test", "avvio" });
+            this.Currency_list.Items.AddRange(new object[]{});
             this.Currency_list.Location = new System.Drawing.Point(59, 30);
             this.Currency_list.Name = "Currency_list";
             this.Currency_list.Size = new System.Drawing.Size(54, 21);

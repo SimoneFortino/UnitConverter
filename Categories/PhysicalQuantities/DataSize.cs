@@ -16,17 +16,17 @@ namespace UnitConverter.Categories.PhysicalQuantities
         
         protected override Dictionary<Unit, double> Ref { get; } = new Dictionary<Unit, double>
         {
-            // unità riferimento
-            { Unit.Byte, 1 },
-            { Unit.Kilobyte, 1e3 },
-            { Unit.Megabyte, 1e6 },
-            { Unit.Gigabyte, 1e9 },
-            { Unit.Terabyte, 1e12 },
+            // S.I.
+            { Unit.Byte, 1.0 },                     // B
+            { Unit.Kilobyte, 1024.0 },              // KiB
+            { Unit.Megabyte, 1_048_576.0 },         // MiB
+            { Unit.Gigabyte, 1_073_741_824.0 },     // GiB
+            { Unit.Terabyte, 1_099_511_627_776.0 }, // TiB
             
-            { Unit.Bit, 0.125 },
-            { Unit.Kilobit, 125 },
-            { Unit.Megabit, 125e3 },
-            { Unit.Gigabit, 125e6 },
+            { Unit.Bit, 0.125 },                     // b
+            { Unit.Kilobit, 128.0 },                 // Kib = 1024 b
+            { Unit.Megabit, 131_072.0 },             // Mib
+            { Unit.Gigabit, 134_217_728.0 },         // Gib
         };
         
         internal readonly Dictionary<string, Unit> UnitsDictionary = new Dictionary<string, Unit>

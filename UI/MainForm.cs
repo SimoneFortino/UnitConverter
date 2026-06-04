@@ -49,8 +49,11 @@ namespace UnitConverter.UI
             convertedUnitComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
             convertedUnitComboBox.ValueMember = "Value";   // quello che usi nel codice
             
-            PhysicalquantitiesDataSource.DataSource = Enum.GetValues(typeof(ObjectToConvert));
+            PhysicalquantitiesDataSource.DataSource = new BindingSource(ObjToConvertDict.CategoryDisplayNames, null);
             physicalQuantityComboBox.DataSource = PhysicalquantitiesDataSource;
+            physicalQuantityComboBox.DisplayMember = "Key";   // quello che vedi nel ComboBox
+            physicalQuantityComboBox.ValueMember = "Value";   // quello che usi nel codice
+            
             
             RefreshAll();
             
@@ -91,13 +94,13 @@ namespace UnitConverter.UI
         {
             try
             {
-                Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedItem;
+                Selection = (ObjectToConvert)physicalQuantityComboBox.SelectedValue;
                 StartingValue = Convert.ToDouble(startingValueTextBox.Text);
                 StartingUnit = (Unit)startingUnitComboBox.SelectedValue;
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                //
             }
             
             Refresh();
