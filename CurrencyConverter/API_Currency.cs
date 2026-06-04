@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace CurrencyConverter
     {
 
-    public class Prova
+    public class API_Currency
     {
         public API_Obj result;
         private string _apiKey = Environment.GetEnvironmentVariable("API_KEY");
