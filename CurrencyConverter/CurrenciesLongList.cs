@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace CurrencyConverter
 
@@ -15,11 +16,5 @@ namespace CurrencyConverter
             "RUB", "SAR", "SEK", "SGD", "THB", "TRY", "TWD", "UAH",
             "USD", "UYU", "ZAR"
         };
-        
-        public static Dictionary<string, string> Load()
-        {
-            string json = File.ReadAllText("currencies.json");
-            return JsonSerializer.Deserialize<Dictionary<string, string>>(json);
-        }
     }
 }

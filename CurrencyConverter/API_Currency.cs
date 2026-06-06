@@ -7,17 +7,16 @@ namespace CurrencyConverter
     public class API_Currency
     {
         public API_Obj result;
-        private string _apiKey = Environment.GetEnvironmentVariable("API_KEY");
         
         public  bool Import()
-            {
+           {
             try
                 {
-                String URLString = $"https://v6.exchangerate-api.com/v6/{_apiKey}/latest/USD";
+                String URLString = "https://v6.exchangerate-api.com/v6/3a64e372ca0cb7a03da403be/latest/USD";
                 using (var webClient = new System.Net.WebClient())
                     {
                     var json = webClient.DownloadString(URLString);
-                    result = JsonConvert.DeserializeObject<API_Obj>(json);
+                    API_Obj Test = JsonConvert.DeserializeObject<API_Obj>(json);
                     return true;
                     }
                 }
@@ -27,7 +26,7 @@ namespace CurrencyConverter
                 }
             }
         }
-  
+
     public class API_Obj
         {
         public string result { get; set; }
@@ -95,5 +94,4 @@ namespace CurrencyConverter
         public double UYU { get; set; }
         public double ZAR { get; set; }
         }
-
     }
